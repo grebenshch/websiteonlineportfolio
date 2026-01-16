@@ -1,0 +1,220 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0b1023;
+  color: #ffffff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Typing effect */
+.typing {
+  display: inline-block;
+  overflow: hidden;               
+  white-space: nowrap;            
+  border-right: 3px solid #b6b9ff;
+  animation: typing 3.5s steps(30, end) forwards, blink 0.7s step-end 6;
+}
+
+/* Typing keyframes */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; border-right-color: transparent; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #b6b9ff; }
+}
+
+/* Header */
+.header {
+  background: #1c1f3a;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  color: #b6b9ff;
+}
+
+/* About Section */
+.about {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  animation: fadeInSection 1s ease forwards;
+}
+
+.profile-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #a6a9ff;
+  box-shadow: 0 0 25px rgba(166, 169, 255, 0.5);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  border-color: #c9caff;
+  box-shadow: 0 0 40px rgba(166, 169, 255, 0.8);
+}
+
+.about-text {
+  flex: 1;
+  font-size: 16px;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+/* Certificates Section */
+.certificates {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.cert-card {
+  background: #1c1f3a;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 0 25px rgba(182,185,255,0.5);
+}
+
+.cert-card h3 {
+  color: #b6b9ff;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.cert-card p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.pdf-link {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #b6b9ff;
+  color: #0b1023;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pdf-link:hover {
+  background: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+#contact {
+  margin-top: 60px;
+}
+
+#contact .card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  padding: 36px;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 35px rgba(182,185,255,0.5);
+}
+
+#contact .card h2 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #b6b9ff;
+}
+
+#contact .card p {
+  font-size: 16px;
+  color: #98a0c3;
+  margin-bottom: 22px;
+}
+
+#contact .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#contact .contact div {
+  font-size: 15px;
+}
+
+#contact .contact strong {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 4px;
+}
+
+#contact a.link {
+  color: #6f4ef1;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+#contact a.link:hover {
+  color: #2b6bd6;
+}
+
+/* Fade In Animation for sections */
+@keyframes fadeInSection {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-photo {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  #contact .card {
+    padding: 20px;
+  }
+  #contact .card h2 {
+    font-size: 23px;
+  }
+  #contact .contact div {
+    font-size: 14px;
+  }
+}
