@@ -55,19 +55,42 @@ body {
   animation: fadeInSection 1s ease forwards;
 }
 
-.profile-photo {
-  width: 220px;
-  height: 220px;
+.photo-wrapper {
+  position: relative;
+  width: 220px;       /* size of the circle */
+  height: 220px;      /* same as width for a perfect circle */
   border-radius: 50%;
-  border: 6px solid #c9caff;
-  box-shadow: 0 0 35px rgba(201, 202, 255, 0.6);
+  overflow: hidden;   /* crops the image to the circle */
+  margin: 0 auto;     /* center the circle */
+  border: 4px solid #a6a9ff;
+  box-shadow: 0 0 25px rgba(166, 169, 255, 0.5);
   transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
 }
 
-.profile-photo:hover {
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* ensures it fills the circle without stretching */
+  display: block;
+  pointer-events: none;  /* prevents dragging */
+  user-select: none;     /* prevents selection */
+}
+
+.photo-wrapper:hover {
   transform: scale(1.05);
   border-color: #c9caff;
   box-shadow: 0 0 40px rgba(166, 169, 255, 0.8);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: default;   /* disables right-click and dragging */
+  background: transparent;
+  z-index: 10;
 }
 
 .about-text {
