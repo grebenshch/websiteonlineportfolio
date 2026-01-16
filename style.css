@@ -57,9 +57,9 @@ body {
 /* Profile photo wrapper */
 .photo-wrapper {
   width: 220px;
-  height: 220px;               /* ensure square */
-  border-radius: 50%;           /* circle */
-  overflow: hidden;             /* crop image inside circle */
+  height: 220px;               /* keep square */
+  border-radius: 50%;           /* circular border */
+  overflow: hidden;             /* crop wrapper */
   border: 4px solid #a6a9ff;
   box-shadow: 0 0 25px rgba(166, 169, 255, 0.5);
   margin: 0 auto;
@@ -69,18 +69,15 @@ body {
   justify-content: center;
 }
 
-/* Profile photo itself */
+/* Profile photo itself (already circular image) */
 .profile-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;           /* fill circle without distortion */
-  object-position: center;      /* keep face centered */
-  border-radius: 50%;           /* make image itself circular */
+  object-fit: cover;
+  object-position: center;
   display: block;
   pointer-events: none;
   user-select: none;
-  min-width: 100%;
-  min-height: 100%;
 }
 
 /* Hover effect */
@@ -238,5 +235,4 @@ body {
     font-size: 14px;
   }
 }
-
 
