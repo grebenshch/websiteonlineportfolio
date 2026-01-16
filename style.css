@@ -17,7 +17,6 @@ body {
   animation: typing 3.5s steps(30, end) forwards, blink 0.7s step-end 6;
 }
 
-/* Typing keyframes */
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; border-right-color: transparent; }
@@ -57,14 +56,13 @@ body {
 
 /* Profile photo wrapper */
 .photo-wrapper {
-  position: relative;
-  width: 220px;       /* circle size */
-  height: 220px;      /* same as width for perfect circle */
-  border-radius: 50%;
-  overflow: hidden;   /* crops the image to fit the circle */
-  margin: 0 auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;      /* perfect circle */
+  overflow: hidden;        /* crop image inside circle */
   border: 4px solid #a6a9ff;
   box-shadow: 0 0 25px rgba(166, 169, 255, 0.5);
+  margin: 0 auto;
   transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
 }
 
@@ -72,11 +70,11 @@ body {
 .profile-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* fills the circle without stretching */
-  object-position: center; /* centers the face in the circle */
+  object-fit: cover;        /* crop tall PNG to fill circle */
+  object-position: center;  /* keep face centered */
   display: block;
-  pointer-events: none;    /* prevents dragging */
-  user-select: none;       /* prevents selection */
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Hover effect */
@@ -84,18 +82,6 @@ body {
   transform: scale(1.05);
   border-color: #c9caff;
   box-shadow: 0 0 40px rgba(166, 169, 255, 0.8);
-}
-
-/* Optional overlay to prevent right-click */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: default;
-  background: transparent;
-  z-index: 10;
 }
 
 /* About text */
@@ -166,12 +152,12 @@ body {
 }
 
 #contact .card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   padding: 36px;
   border-radius: 16px;
   max-width: 700px;
   margin: 0 auto;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -218,7 +204,7 @@ body {
   color: #2b6bd6;
 }
 
-/* Fade In Animation for sections */
+/* Fade In Animation */
 @keyframes fadeInSection {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
